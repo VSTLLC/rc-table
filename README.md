@@ -213,6 +213,12 @@ React.render(<Table columns={columns} data={data} />, mountNode);
       <td>get wrapper of tbody, [demo](http://react-component.github.io/table/examples/animation.html)</td>
     </tr>
     <tr>
+      <td>getHeaderWrapper</td>
+      <td>Function(header)</td>
+      <td></td>
+      <td>get wrapper of thead</td>
+    </tr>
+    <tr>
       <td>emptyText</td>
       <td>React.Node</td>
       <td>`No Data`</td>

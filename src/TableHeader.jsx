@@ -6,13 +6,14 @@ export default React.createClass({
     prefixCls: PropTypes.string,
     rowStyle: PropTypes.object,
     rows: PropTypes.array,
+    getHeaderWrapper: PropTypes.func,
   },
   shouldComponentUpdate(nextProps) {
     return !shallowequal(nextProps, this.props);
   },
   render() {
-    const { prefixCls, rowStyle, rows } = this.props;
-    return (
+    const { prefixCls, rowStyle, rows, getHeaderWrapper } = this.props;
+    return getHeaderWrapper(
       <thead className={`${prefixCls}-thead`}>
         {
           rows.map((row, index) => (

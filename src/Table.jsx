@@ -36,6 +36,7 @@ const Table = React.createClass({
     scroll: PropTypes.object,
     rowRef: PropTypes.func,
     getBodyWrapper: PropTypes.func,
+    getHeaderWrapper: PropTypes.func,
     children: PropTypes.node,
   },
 
@@ -193,7 +194,7 @@ const Table = React.createClass({
   },
 
   getHeader(columns, fixed) {
-    const { showHeader, expandIconAsCell, prefixCls } = this.props;
+    const { showHeader, expandIconAsCell, prefixCls, getHeaderWrapper } = this.props;
     const rows = this.getHeaderRows(columns);
 
     if (expandIconAsCell && fixed !== 'right') {
@@ -212,6 +213,7 @@ const Table = React.createClass({
         prefixCls={prefixCls}
         rows={rows}
         rowStyle={trStyle}
+        getHeaderWrapper={getHeaderWrapper}
       />
     ) : null;
   },
